@@ -1,1 +1,36 @@
-<p>order works!</p>
+<h4>Products list </h4>
+<!-- <form #loginform="ngForm" (ngSubmit)="addtocart(orders)"></form> -->
+
+<button class="btn btn-dark" (click)="checkout()" style="float:left">Check Out</button><br><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Cusine</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let u of users"> </tr> -->
+    <tr *ngFor="let p of products">
+
+      <input type="checkbox" name="addtocart" id="addtocart" />
+      <th scope="row">{{p.p_id}}</th>
+      <td><a class="link" (click)="details(p.p_id)">{{p.name}}</a></td>
+      <td>{{p.cusine}}</td>
+      <td>{{p.desc}}</td>
+      <td>{{p.price}}</td>
+
+      <button class="btn btn-dark btn-xs" (click)="addtocart(p.p_id)" style="float:left">Add To Cart</button>
+
+
+    </tr>
+
+  </tbody>
+</table>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
