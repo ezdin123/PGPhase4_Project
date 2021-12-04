@@ -1,0 +1,54 @@
+
+<h4>Product Form </h4>
+<div class="well well-lg">
+    <div class="jumbotron"> 
+    <form [formGroup]="productForm" class="form-horizontal" (ngSubmit)="submitForm(productForm)" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md">
+                <label for="cusine">Cusine * </label>
+                <input type="text" class="form-control" formControlName="cusine" name="cusine" id="cusine"
+                    placeholder="Enter Cusine">
+                <small *ngIf="hasError('cusine')" [ngClass]="{'has-error' : hasError('cusine') }">
+                    <span *ngIf="cusine.errors.required"> Cusine is a required field .</span>
+                    <span *ngIf="cusine.errors.minlength"> Cusine is min 2 char long .</span>
+                    <span *ngIf="cusine.errors.maxlength"> Cusine is max 16 char long .</span>
+                </small>
+            </div>
+            <div class="form-group col-md">
+                <label for="name"> Name * </label>
+                <input type="text" class="form-control" formControlName="name" name="name" id="name"
+                    placeholder="Enter Name of the Dish ">
+                <small *ngIf="hasError('name')" [ngClass]="{'has-error' : hasError('name') }">
+                    <span *ngIf="name.errors.required"> Name is a required field .</span>
+                    <span *ngIf="name.errors.minlength"> Name is min 2 char long .</span>
+                    <span *ngIf="name.errors.maxlength"> Name is max 16 char long .</span>
+                </small>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md">
+                <label for="desc">Description</label>
+                <input type="text" class="form-control" formControlName="desc" name="desc" id="desc"
+                    placeholder="Enter Description for the Dish">
+                <small *ngIf="hasError('desc')" [ngClass]="{'has-error' : hasError('desc') }">
+                    <span *ngIf="desc.errors.desc"> Please, enter a valid description here.</span>
+                </small>
+
+            </div>
+
+            <div class="form-group col-md">
+                <label for="name"> Price *</label>
+                <input type="text" class="form-control" formControlName="price" name="price" id="price"
+                    placeholder="Enter Price of the Dish">
+                <small *ngIf="hasError('price')" [ngClass]="{'has-error' : hasError('price') }">
+                    <span *ngIf="price.errors.required"> Price is a required field .</span>
+                    <span *ngIf="price.errors.price"> Please, enter a valid price here.</span>
+                </small>
+            </div>
+        </div>
+        <button type="submit" a href="/admin" class="btn btn-primary btn-block">Submit</button>
+
+    </form>
+
+</div>

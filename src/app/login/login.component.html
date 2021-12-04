@@ -1,0 +1,16 @@
+<br><h4>Administrative Login </h4> <br>
+<form>
+    <div class="input">
+        <label> <b>Username: </b> </label>
+        <input type="text" name="username" placeholder="Enter User Name" [(ngModel)]="username"> <br><br>
+    </div>
+
+    <div class="input">
+        <label> <b> Password: </b> </label>
+        <input type="password" name="password" placeholder="Enter Password" [(ngModel)]="password"> <br><br>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" (click)="LoginUser()">Login </button>
+
+</form>
